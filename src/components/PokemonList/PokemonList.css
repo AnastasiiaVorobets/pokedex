@@ -1,0 +1,19 @@
+.pokemon__container {
+  display: flex;
+  width: 900px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+}
+
+@media (max-width: 1200px) {
+  .pokemon__container {
+    width: 600px;
+  }
+}
+
+@media (max-width: 800px) {
+  .pokemon__container {
+    width: 220px;
+  }
+}

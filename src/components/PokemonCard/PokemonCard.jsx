@@ -1,49 +1,41 @@
+import { capitalizeName } from '../../helpers/capitalizeName';
 import './PokemonCard.css';
 
-function PokemonCard( { pokemons = [], details } ) {
+function PokemonCard({ pokemon, details }) {
+  const { id, name } = pokemon;
+
   return (
-    <>
-    <div className='pokemon__container'>
-      {pokemons.map(pokemon => {
+    <div
+      role="button"
+      className="pokemon__block"
+      key={id}
+      onClick={() => details(pokemon)}
+    >
+      <div className='image-block'>
+        <img
+          className="pokemonImage"
+          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${id}.svg`}
+          alt={`${name}`}
+        />
+      </div>
+      <h2 className="pokemonName">
+        {capitalizeName(name)}
+      </h2>
+      <div>
+        {pokemon.types.map((type) => {
+          const { name: typeName } = type.type;
           return (
             <div
-              role="button"
-              className="pokemon__block"
-              key={pokemon.id}
-              onClick={() => details(pokemon)}
-
+              className="pokemon__type"
+              key={typeName}
             >
-              <div className='image-block'>
-                <img 
-                  className="pokemonImage"
-                  src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokemon.id}.svg`}
-                  alt={`${pokemon.name}`} 
-                />
-              </div>
-              <h2
-                className="pokemonName"
-              >
-                {pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}
-              </h2>
-              <div>
-                {pokemon.types.map((type) => {
-                  return (
-                    <div
-                      className="pokemon__type"
-                      key={pokemon.id}
-                    >
-                      {type.type.name}
-                    </div>
-                  );
-                })}
-              </div>
+              {typeName}
             </div>
           );
-        })
-      }
+        })}
       </div>
-    </>
-  )
+    </div>
+  );
 }
 
 export default PokemonCard;

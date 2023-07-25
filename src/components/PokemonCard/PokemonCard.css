@@ -7,6 +7,7 @@
   border: 1px solid black;
   border-radius: 10px;
   background-color: rgb(182, 95, 182);
+  cursor: pointer;
   transition: all 1s;
 }
 
@@ -14,14 +15,6 @@
   transform: scale(106%);
   background-color: rgb(247, 247, 64);
   border: 3px solid black;
-}
-
-.pokemon__container {
-  display: flex;
-  width: 900px;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 50px;
 }
 
 .pokemonName {
@@ -58,11 +51,8 @@
   background-color: rgb(188, 214, 228);
 }
 
-@media (max-width: 1200px) {
-  .pokemon__container {
-    width: 600px;
-  }
 
+@media (max-width: 1200px) {
   .pokemon__block {
     width: 200px;
     height: 300px;
@@ -82,10 +72,6 @@
 }
 
 @media (max-width: 800px) {
-  .pokemon__container {
-    width: 220px;
-  }
-
   .pokemon__block {
     width: 200px;
     height: 350px;
