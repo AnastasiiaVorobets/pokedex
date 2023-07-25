@@ -16,7 +16,7 @@
   background-color: rgb(180, 64, 180);
 }
 
-@media (max-width: 850px) {
+@media (max-width: 900px) {
   .details {
     font-size: 15px;
     left: 50%;
