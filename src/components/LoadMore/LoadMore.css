@@ -1,0 +1,25 @@
+.button {
+  width: 350px;
+  height: 60px;
+  margin: 30px;
+  font-size: 20px;
+  font-family: cursive;
+  background-color: rgb(241, 241, 89);
+  border: 1px solid black;
+  border-radius: 10px;
+  transition: all 1s;
+}
+
+.button:hover {
+  background-color: rgb(223, 189, 223);
+}
+
+.button:active {
+  background-color: rgb(67, 21, 67);
+}
+
+@media (max-width: 800px) {
+  .button {
+    width: 200px;
+  }
+}

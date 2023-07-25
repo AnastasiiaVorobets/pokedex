@@ -1,0 +1,57 @@
+.details {
+  display: block;
+  position: fixed;
+  top: 50%;
+  right: 50px;
+  width: 300px;
+  height: 600px;
+  background-color: rgb(248, 248, 103);
+  border: 2px solid black;
+  border-radius: 10px;
+  transform: translateY(-50%);
+  transition: all 1s;
+}
+
+.details:hover {
+  background-color: rgb(180, 64, 180);
+}
+
+@media (max-width: 1300px) {
+  .details {
+    width: 250px;
+    right: 25px;
+    font-size: 15px;
+  }
+}
+
+.details__info {
+  font-size: 12px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.details__info-name {
+  display: flex;
+  margin: 5px auto;
+  justify-content: center;
+  width: 120px;
+  border: 1px solid black;
+  background-color: rgb(215, 106, 215);
+}
+
+.details__info-image {
+  width: 100px;
+  height: 100px;
+}
+
+.abilities_title , .stats_title{
+  font-weight: 700;
+}
+
+.abilities, .stats {
+  margin: 5px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 15px;
+  background-color: rgb(168, 229, 229);
+  border: 3px solid rgb(184, 74, 184);
+}
