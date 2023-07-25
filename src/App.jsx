@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import fetchData from './api/pokemons';
 import Header from './components/Header/Header';
 import PokemonList from './components/PokemonList/PokemonList';
@@ -45,17 +45,23 @@ function App() {
     pokemonData();
   }, [count]);
 
-  const loadMore = () => {
+  const loadMore = useCallback(() => {
     setCount((prevCount) => prevCount + 3);
     setDetails(null);
-  };
+  }, []);
+  
+  const closeCard = useCallback(() => {
+    if (details) {
+      setDetails(null);
+    }
+  }, [details]);
 
   return (
     <div className="App">
       <Header />
       <PokemonList pokemons={pokemons} details={pokemon => setDetails(pokemon)} />
       <LoadMore loadMore={loadMore} />
-      {details && <PokemonDetail details={details} />}
+      {details && <PokemonDetail details={details} closeCard={closeCard}/>}
       <Footer />
     </div>
   );

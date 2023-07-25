@@ -1,13 +1,19 @@
 import { capitalizeName } from '../../helpers/capitalizeName';
 import './PokemonDetail.css';
 
-function PokemonDetail({ details }) {
+function PokemonDetail({ details, closeCard }) {
   const { name, id } = details;
 
   return (
     <>
     <div className="details">
-      <h3>Pokemon details:</h3>
+      <button
+        className='closeButton'
+        onClick={closeCard}
+      >
+        Close Card
+      </button>
+      <p>Pokemon details:</p>
       {details && (
         <div className="details__info">
           <h2
