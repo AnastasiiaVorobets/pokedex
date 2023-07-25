@@ -7,7 +7,11 @@ function PokemonDetail({ details }) {
       <h3>Pokemon details:</h3>
       {details && (
         <div className="details__info">
-          <h2 className='details__info-name'>{details.name.charAt(0).toUpperCase() + details.name.slice(1)}</h2>
+          <h2
+            className='details__info-name'
+          >
+            {details.name.charAt(0).toUpperCase() + details.name.slice(1)}
+          </h2>
           <img
             className="details__info-image"
             src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${details.id}.svg`}

@@ -1,5 +1,6 @@
-import './LoadMore.css'
-function LoadMore({loadMore}) {
+import './LoadMore.css';
+
+function LoadMore({ loadMore }) {
   return (
     <button
       className='button'

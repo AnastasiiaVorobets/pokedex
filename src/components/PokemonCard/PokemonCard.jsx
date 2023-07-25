@@ -1,4 +1,3 @@
-//import PokemonCard from '../PokemonCard/PokemonCard';
 import './PokemonCard.css';
 
 function PokemonCard( { pokemons = [], details } ) {
@@ -15,13 +14,17 @@ function PokemonCard( { pokemons = [], details } ) {
 
             >
               <div className='image-block'>
-              <img 
-                className="pokemonImage"
-                src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokemon.id}.svg`}
-                alt={`${pokemon.name}`} 
-              />
+                <img 
+                  className="pokemonImage"
+                  src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokemon.id}.svg`}
+                  alt={`${pokemon.name}`} 
+                />
               </div>
-              <h2 className="pokemonName">{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</h2>
+              <h2
+                className="pokemonName"
+              >
+                {pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}
+              </h2>
               <div className="poke-type-conteiner">
                 {pokemon.types.map((type) => {
                   return (

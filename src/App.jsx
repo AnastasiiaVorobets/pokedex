@@ -4,8 +4,6 @@ import PokemonCard from './components/PokemonCard/PokemonCard';
 import LoadMore from './components/LoadMore/LoadMore';
 import PokemonDetail from './components/PokemonDetail/PokemonDetail';
 import Footer from './components/Footer/Footer';
-import './App.css';
-
 
 function App() {
   const limit = 12;
@@ -20,7 +18,6 @@ function App() {
       return await response.json();
     } catch (error) {
       console.error('Error:', error);
-      throw error;
     }
   };
 
@@ -35,7 +32,6 @@ function App() {
 
       setPokemons((prevState) => {
         const newState = [...prevState, ...pokemonData];
-        newState.sort((a, b) => a.id - b.id);
         return newState;
       });
     } catch (error) {
@@ -43,22 +39,22 @@ function App() {
     }
   };
 
-  const pokemonData = async () => {
-    try {
-      setPokemons([]);
-      const resultFetch = await fetchData(`${url}?limit=${count}`);
-      getPokemon(resultFetch.results);
-    } catch (error) {
-      console.log('Error', error)
-    }
-  };
-
   useEffect(() => {
+    const pokemonData = async () => {
+      try {
+        setPokemons([]);
+        const resultFetch = await fetchData(`${url}?limit=${count}`);
+        getPokemon(resultFetch.results);
+      } catch (error) {
+        console.log('Error', error);
+      }
+    };
+
     pokemonData();
   }, [count]);
 
   const loadMore = () => {
-    setCount((prevCount) => prevCount + 1);
+    setCount((prevCount) => prevCount + 3);
     setDetails(null);
   };
 
@@ -67,7 +63,7 @@ function App() {
       <Header />
       <PokemonCard pokemons={pokemons} details={pokemon => setDetails(pokemon)} />
       <LoadMore loadMore={loadMore} />
-      <PokemonDetail details={details} />
+      {details && <PokemonDetail details={details} />}
       <Footer />
     </div>
   );

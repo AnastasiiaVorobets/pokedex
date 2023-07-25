@@ -1,7 +1,7 @@
 .button {
+  margin: 30px;
   width: 350px;
   height: 60px;
-  margin: 30px;
   font-size: 20px;
   font-family: cursive;
   background-color: rgb(241, 241, 89);
@@ -18,8 +18,15 @@
   background-color: rgb(67, 21, 67);
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .button {
     width: 200px;
+  }
+}
+
+@media (max-width: 600px) {
+  .button {
+    display: block;
+    margin: 5px;
   }
 }

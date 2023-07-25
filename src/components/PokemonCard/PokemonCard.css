@@ -11,15 +11,15 @@
 }
 
 .pokemon__container {
-  width: 900px;
   display: flex;
+  width: 900px;
   flex-wrap: wrap;
   justify-content: center;
   gap: 50px;
 }
 
 .pokemon__block:hover {
-  transform: scale(110%);
+  transform: scale(106%);
   background-color: rgb(247, 247, 64);
   border: 3px solid black;
 }
@@ -64,17 +64,15 @@
     width: 130px;
     border: 1px solid rgb(223, 223, 84);
   }
-
-  
 }
 
 @media (max-width: 800px) {
   .pokemon__container {
-    width: 300px;
+    width: 220px;
   }
 
   .pokemon__block {
-    width: 250px;
+    width: 200px;
     height: 350px;
     font-size: 15px;
   }
@@ -90,4 +88,3 @@
     border: 1px solid rgb(223, 223, 84);
   }
 }
-
