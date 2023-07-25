@@ -25,11 +25,11 @@ function PokemonCard( { pokemons = [], details } ) {
               >
                 {pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}
               </h2>
-              <div className="poke-type-conteiner">
+              <div>
                 {pokemon.types.map((type) => {
                   return (
                     <div
-                      className="poke-type"
+                      className="pokemon__type"
                       key={pokemon.id}
                     >
                       {type.type.name}
