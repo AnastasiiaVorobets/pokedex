@@ -1,4 +1,4 @@
-- [DEMO LINK](https://anastasiiavorobets.github.io/pokedex-test-task/)
+- [DEMO LINK](https://anastasiiavorobets.github.io/pokedex/)
 
 # To run the project
 1. `make a fork`
