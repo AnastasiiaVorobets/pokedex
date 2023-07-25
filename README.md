@@ -23,4 +23,4 @@
 - Run `npm install` in youe terminal
 - Run `npm start`
 - Open `http://localhost:3000/`
-- (available to deploy application to gh-pages,)
+- (available to deploy application to gh-pages)

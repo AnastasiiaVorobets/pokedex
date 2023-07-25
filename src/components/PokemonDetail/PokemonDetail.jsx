@@ -41,11 +41,7 @@ function PokemonDetail({ details, closeCard }) {
               const { name } = stat.stat;
               const {base_stat} = stat;
               return (
-                <>
-                  <p>
-                    {name} : {base_stat}
-                  </p>
-                </>
+                <p>{name} : {base_stat}</p>
               );
             })}
           </div>

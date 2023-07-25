@@ -1,7 +1,6 @@
 import './LoadMore.css';
 
 function LoadMore({ loadMore }) {
-
   const handleClick = (event) => {
     event.preventDefault();
     loadMore()
