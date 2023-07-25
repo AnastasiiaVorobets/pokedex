@@ -31,7 +31,7 @@ function PokemonDetail({ details, closeCard }) {
             {details.abilities.map((ability) => {
               const {name} = ability.ability;
               return (
-                <p>{name}</p>
+                <p key={name}>{name}</p>
               );
             })}
           </div>
@@ -41,7 +41,7 @@ function PokemonDetail({ details, closeCard }) {
               const { name } = stat.stat;
               const {base_stat} = stat;
               return (
-                <p>{name} : {base_stat}</p>
+                <p key={name}>{name} : {base_stat}</p>
               );
             })}
           </div>
