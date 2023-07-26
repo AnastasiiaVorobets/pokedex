@@ -27,8 +27,7 @@
 
 @media (max-width: 600px) {
   .button {
-    display: block;
-    margin: 5px;
+    margin: 5px 0 15px;
   }
 }
 
