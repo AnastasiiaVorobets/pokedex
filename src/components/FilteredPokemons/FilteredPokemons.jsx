@@ -1,5 +1,3 @@
-import React from 'react';
-
 const FilteredPokemons = ({ selectedType, filterByType }) => {
   const types = [
     'fire', 'grass', 'ice', 'water', 'electric',  'fighting',
@@ -16,7 +14,10 @@ const FilteredPokemons = ({ selectedType, filterByType }) => {
       <label>
         Filter by Type:
         <br />
-        <select value={selectedType} onChange={handleFilterByType}>
+        <select
+          value={selectedType} 
+          onChange={handleFilterByType}
+        >
           <option value="">All Types</option>
           {types.map((type) => (
             <option key={type} value={type}>{type}</option>

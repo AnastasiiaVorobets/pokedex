@@ -7,7 +7,6 @@ import LoadMore from './components/LoadMore/LoadMore';
 import PokemonDetail from './components/PokemonDetail/PokemonDetail';
 import Footer from './components/Footer/Footer';
 
-
 function App() {
   const limit = 12;
   const url = 'https://pokeapi.co/api/v2/pokemon/';
