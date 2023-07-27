@@ -19,7 +19,7 @@ const FilteredPokemons = ({ selectedType, filterByType }) => {
         <select value={selectedType} onChange={handleFilterByType}>
           <option value="">All Types</option>
           {types.map((type) => (
-            <option key={type} value={type}> {type}</option>
+            <option key={type} value={type}>{type}</option>
           ))}
         </select>
       </label>

@@ -1,11 +1,11 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import fetchData from './api/pokemons';
 import Header from './components/Header/Header';
+import FilteredPokemons from './components/FilteredPokemons/FilteredPokemons';
 import PokemonList from './components/PokemonList/PokemonList';
 import LoadMore from './components/LoadMore/LoadMore';
 import PokemonDetail from './components/PokemonDetail/PokemonDetail';
 import Footer from './components/Footer/Footer';
-import FilteredPokemons from './components/FilteredPokemons/FilteredPokemons';
 
 
 function App() {
