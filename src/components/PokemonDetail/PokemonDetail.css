@@ -37,10 +37,10 @@
   font-family: 'Courier New', Courier, monospace;
 }
 
-.details__info-name {
+.details__info-name-id {
   display: flex;
   margin: 2px auto;
-  width: 120px;
+  width: 160px;
   justify-content: center;
   border: 1px solid black;
   background-color: rgb(215, 106, 215);

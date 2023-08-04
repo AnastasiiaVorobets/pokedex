@@ -1,4 +1,5 @@
 import { capitalizeName } from '../../helpers/capitalizeName';
+import { colorByType } from '../../helpers/colorByType';
 import './PokemonCard.css';
 
 function PokemonCard({ pokemon, details }) {
@@ -28,6 +29,7 @@ function PokemonCard({ pokemon, details }) {
             <div
               className="pokemon__type"
               key={typeName}
+              style={{ backgroundColor: colorByType[typeName] }}
             >
               {typeName}
             </div>

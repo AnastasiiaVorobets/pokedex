@@ -1,4 +1,5 @@
 import { capitalizeName } from '../../helpers/capitalizeName';
+import { correctId } from '../../helpers/correctId';
 import './PokemonDetail.css';
 
 function PokemonDetail({ details, closeCard }) {
@@ -17,9 +18,10 @@ function PokemonDetail({ details, closeCard }) {
       {details && (
         <div className="details__info">
           <h2
-            className='details__info-name'
+            className='details__info-name-id'
           >
             {capitalizeName(name)}
+            {correctId(id)}
           </h2>
           <img
             className="details__info-image"
