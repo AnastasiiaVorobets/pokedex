@@ -11,7 +11,7 @@ function App() {
   const limit = 12;
   const url = 'https://pokeapi.co/api/v2/pokemon/';
   const [pokemons, setPokemons] = useState([]);
-  const [count, setCount] = useState(limit);
+  const [offset, setOffset] = useState(0);
   const [details, setDetails] = useState();
   const [selectedType, setSelectedType] = useState('');
 
@@ -25,8 +25,9 @@ function App() {
       );
 
       const filteredPokemons = selectedType
-        ? pokemonData
-          .filter((pokemon) => pokemon.types.some((type) => type.type.name === selectedType))
+        ? pokemonData.filter((pokemon) =>
+            pokemon.types.some((type) => type.type.name === selectedType)
+          )
         : pokemonData;
 
       setPokemons((prevState) => {
@@ -41,8 +42,7 @@ function App() {
   useEffect(() => {
     const pokemonData = async () => {
       try {
-        setPokemons([]);
-        const resultFetch = await fetchData(`${url}?limit=${count}`);
+        const resultFetch = await fetchData(`${url}?limit=${limit}&offset=${offset}`);
         getPokemon(resultFetch.results);
       } catch (error) {
         console.log('Error', error);
@@ -50,10 +50,10 @@ function App() {
     };
 
     pokemonData();
-  }, [count, selectedType]);
+  }, [offset, selectedType]);
 
   const loadMore = useCallback(() => {
-    setCount((prevCount) => prevCount + 3);
+    setOffset((prevOffset) => prevOffset + limit);
     setDetails(null);
   }, []);
 
@@ -66,7 +66,7 @@ function App() {
   const filterByType = useCallback((type) => {
     setSelectedType(type);
     setPokemons([]);
-    setCount(limit);
+    setOffset(0);
     setDetails(null);
   }, []);
 
@@ -74,9 +74,9 @@ function App() {
     <div className="App">
       <Header />
       <FilteredPokemons selectedType={selectedType} filterByType={filterByType} />
-      <PokemonList pokemons={pokemons} details={pokemon => setDetails(pokemon)} />
+      <PokemonList pokemons={pokemons} details={(pokemon) => setDetails(pokemon)} />
       <LoadMore loadMore={loadMore} />
-      {details && <PokemonDetail details={details} closeCard={closeCard}/>}
+      {details && <PokemonDetail details={details} closeCard={closeCard} />}
       <Footer />
     </div>
   );

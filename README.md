@@ -4,7 +4,7 @@
 1. All Pokemon cards and data are loaded
 2. When you click on the card, all the detailed information about the Pokemon appears on the right sideon appears
 3. When you click on another Pokemon, the information changes
-4. When you click on the button LoadMore, three new cards are loaded under all the previous ones
+4. When you click on the button LoadMore, 12 new cards are loaded under all the previous ones
 5. You can close the card with detailed information when you click on the button placed on this card
 6. (Additionally) - Each card has hover effects
 7. (Additionally) - Adaptive design(Not for all devices)
