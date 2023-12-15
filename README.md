@@ -10,7 +10,7 @@
 7. (Additionally) - Adaptive design(Not for all devices)
 
 ## Technologies
-- Node v14.16.1
+- Node v16.20.2
 - NPM
 - React
 - API
